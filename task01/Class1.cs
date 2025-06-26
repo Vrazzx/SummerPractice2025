@@ -13,7 +13,7 @@ public static class StringExtensions
             .ToArray();
 
         var reversedString = cleanedString.Reverse().ToArray();
-        
+
         return new string(cleanedString).Equals(new string(reversedString));
     }
 }
