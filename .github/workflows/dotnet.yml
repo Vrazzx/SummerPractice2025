@@ -2,14 +2,15 @@ name: .NET CI
 
 on:
   push:
-   branches: ["main", "task01", "!feature/ci", "!fix/ci"]
+   branches: ["main", "task01"]
 
   pull_request:
-    branches: ["main", "!feature/ci", "!fix/ci"]
+    branches: ["main"]
 
 
 jobs:
   build:
+    if: ${{ !contains('fix/ci feature/ci', github.head_ref) }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
