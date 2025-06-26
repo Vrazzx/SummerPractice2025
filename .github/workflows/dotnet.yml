@@ -3,8 +3,10 @@ name: .NET CI
 on:
   push:
    branches: ["main", "task01"]
+   branches-ignore: ["feature/ci", "fix/ci"]
   pull_request:
     branches: ["main"]
+    branches-ignore: ["feature/ci", "fix/ci"]
 
 jobs:
   build:
