@@ -1,4 +1,4 @@
-using xUnit;
+using Xunit;
 
 public class StringExtensionsTests
 {
