@@ -22,7 +22,7 @@ public class ClassAnalyzer
     public IEnumerable<string> GetMethodsParams(string methodName)
     {
         var method = _type.GetMethods().Where(m => m.Name == methodName);
-        
+
         return method.First().GetParameters().Select(c => c.Name ?? string.Empty);
     }
 
