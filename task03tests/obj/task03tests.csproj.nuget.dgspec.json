@@ -25,7 +25,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task03\\task03.csproj": {
+                "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task03\\task03.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -47,6 +51,10 @@
               "target": "Package",
               "version": "[17.8.0, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.4, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -60,6 +68,64 @@
               "version": "[2.5.3, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task03\\task03.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task03\\task03.csproj",
+        "projectName": "task03",
+        "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task03\\task03.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task03\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
