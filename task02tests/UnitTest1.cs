@@ -42,7 +42,7 @@ public class StudentServiceTests
         Assert.Equal("Анна", result[0].Name);
         Assert.Equal("Иван", result[1].Name);
         Assert.Equal("Петр", result[2].Name);
-        
+
     }
 
     [Fact]
