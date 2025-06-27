@@ -30,8 +30,8 @@ public class Cruiser : ISpaceship
 }
 public class Fighter : ISpaceship
 {
-    public int Speed { get;  } = 100;
-    public int FirePower { get;  } = 50;
+    public int Speed { get; } = 100;
+    public int FirePower { get; } = 50;
 
     public void MoveForward()
     {
