@@ -20,9 +20,10 @@ public class DirectorySizeCommand : ICommand
         }
         long size = CalculateDirectorySize(_directoryPath);
         Console.WriteLine($"Directory size: {size} bytes");
+        
     }
 
-    private long CalculateDirectorySize(string directory)
+    public long CalculateDirectorySize(string directory)
     {
         long size = 0;
         var files = Directory.GetFiles(directory);
