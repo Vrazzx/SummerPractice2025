@@ -1,0 +1,16 @@
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.csproj.AssemblyReference.cache
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.AssemblyInfoInputs.cache
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.AssemblyInfo.cs
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.csproj.CoreCompileInputs.cache
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.sourcelink.json
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\bin\Debug\net8.0\FileSystemCommands.deps.json
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\bin\Debug\net8.0\FileSystemCommands.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\bin\Debug\net8.0\FileSystemCommands.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\bin\Debug\net8.0\CommandLib.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\bin\Debug\net8.0\CommandLib.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSyst.C5E07EE5.Up2Date
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\refint\FileSystemCommands.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\ref\FileSystemCommands.dll
