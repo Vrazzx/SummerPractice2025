@@ -75,11 +75,11 @@ public class FileSystemCommandsTests
     [Fact]
     public void FindFilesCommand_NoEx_WhenNoFilesMatch()
     {
-        
+
         var nonExistentDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
         var command = new FindFilesCommand(nonExistentDir, "*.txt");
 
-        
+
         var ex = Assert.Throws<DirectoryNotFoundException>(() => command.Execute());
 
 
