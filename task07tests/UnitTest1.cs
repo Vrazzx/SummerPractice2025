@@ -3,7 +3,7 @@ namespace task07tests;
 using Xunit;
 using task07;
 using System;
-using System.Reflection;    
+using System.Reflection;
 
 public class AttributeReflectionTests
 {
