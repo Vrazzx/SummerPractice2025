@@ -12,7 +12,6 @@
           "FileSystemCommands": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "coverlet.collector": "6.0.0",
-          "task08": "1.0.0",
           "xunit": "2.5.3",
           "xunit.runner.visualstudio": "2.5.3"
         },
@@ -1041,14 +1040,6 @@
             "fileVersion": "1.0.0.0"
           }
         }
-      },
-      "task08/1.0.0": {
-        "runtime": {
-          "task08.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -1687,11 +1678,6 @@
       "sha512": ""
     },
     "FileSystemCommands/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "task08/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
