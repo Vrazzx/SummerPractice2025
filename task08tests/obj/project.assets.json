@@ -1723,7 +1723,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "CommandLib": "1.0.0"
+          "CommandLib": "1.0.0",
+          "task07": "1.0.0"
         },
         "compile": {
           "bin/placeholder/FileSystemCommands.dll": {}
@@ -1732,14 +1733,14 @@
           "bin/placeholder/FileSystemCommands.dll": {}
         }
       },
-      "task08/1.0.0": {
+      "task07/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
-          "bin/placeholder/task08.dll": {}
+          "bin/placeholder/task07.dll": {}
         },
         "runtime": {
-          "bin/placeholder/task08.dll": {}
+          "bin/placeholder/task07.dll": {}
         }
       }
     }
@@ -5541,10 +5542,10 @@
       "path": "../FileSystemCommands/FileSystemCommands.csproj",
       "msbuildProject": "../FileSystemCommands/FileSystemCommands.csproj"
     },
-    "task08/1.0.0": {
+    "task07/1.0.0": {
       "type": "project",
-      "path": "../task08/task08.csproj",
-      "msbuildProject": "../task08/task08.csproj"
+      "path": "../task07/task07.csproj",
+      "msbuildProject": "../task07/task07.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5553,7 +5554,6 @@
       "FileSystemCommands >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "coverlet.collector >= 6.0.0",
-      "task08 >= 1.0.0",
       "xunit >= 2.5.3",
       "xunit.runner.visualstudio >= 2.5.3"
     ]
@@ -5588,9 +5588,6 @@
             },
             "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\FileSystemCommands\\FileSystemCommands.csproj": {
               "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\FileSystemCommands\\FileSystemCommands.csproj"
-            },
-            "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task08\\task08.csproj": {
-              "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task08\\task08.csproj"
             }
           }
         }

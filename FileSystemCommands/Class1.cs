@@ -1,8 +1,13 @@
 ﻿using CommandLib;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Runtime.InteropServices;
+using task07;
 
 namespace FileSystemCommands;
 
+[DisplayName("Directory Size")]
+[Version(1, 0)]
 public class DirectorySizeCommand : ICommand
 {
     private readonly string _directoryPath;
@@ -20,7 +25,7 @@ public class DirectorySizeCommand : ICommand
         }
         long size = CalculateDirectorySize(_directoryPath);
         Console.WriteLine($"Directory size: {size} bytes");
-        
+
     }
 
     public long CalculateDirectorySize(string directory)
@@ -41,6 +46,9 @@ public class DirectorySizeCommand : ICommand
     }
 }
 
+
+[DisplayName("Find Files")]
+[Version(1, 4)]
 public class FindFilesCommand : ICommand
 {
     private readonly string _directoryPath;

@@ -14,3 +14,5 @@ D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\ob
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\refint\FileSystemCommands.dll
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\FileSystemCommands.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\obj\Debug\net8.0\ref\FileSystemCommands.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\bin\Debug\net8.0\task07.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\FileSystemCommands\bin\Debug\net8.0\task07.pdb

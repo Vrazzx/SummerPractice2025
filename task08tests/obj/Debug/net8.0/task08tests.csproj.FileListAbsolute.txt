@@ -95,8 +95,6 @@ D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\CommandLib.dll
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\FileSystemCommands.dll
-D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\task08.dll
-D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\task08.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\FileSystemCommands.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\CommandLib.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug\net8.0\task08te.924C8E31.Up2Date
@@ -105,3 +103,5 @@ D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug\net8.0\task08tests.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug\net8.0\task08tests.genruntimeconfig.cache
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug\net8.0\ref\task08tests.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\task07.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\task07.pdb

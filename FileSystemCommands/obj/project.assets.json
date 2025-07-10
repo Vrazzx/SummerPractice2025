@@ -11,6 +11,16 @@
         "runtime": {
           "bin/placeholder/CommandLib.dll": {}
         }
+      },
+      "task07/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/task07.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/task07.dll": {}
+        }
       }
     }
   },
@@ -19,11 +29,17 @@
       "type": "project",
       "path": "../CommandLib/CommandLib.csproj",
       "msbuildProject": "../CommandLib/CommandLib.csproj"
+    },
+    "task07/1.0.0": {
+      "type": "project",
+      "path": "../task07/task07.csproj",
+      "msbuildProject": "../task07/task07.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "CommandLib >= 1.0.0"
+      "CommandLib >= 1.0.0",
+      "task07 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -53,6 +69,9 @@
           "projectReferences": {
             "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\CommandLib\\CommandLib.csproj": {
               "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\CommandLib\\CommandLib.csproj"
+            },
+            "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task07\\task07.csproj": {
+              "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task07\\task07.csproj"
             }
           }
         }
