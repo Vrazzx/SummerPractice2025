@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "PluginLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PluginLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PluginLib.dll": {}
+        }
+      },
+      "task10/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "PluginLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/task10.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/task10.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PluginLib/1.0.0": {
+      "type": "project",
+      "path": "../PluginLib/PluginLib.csproj",
+      "msbuildProject": "../PluginLib/PluginLib.csproj"
+    },
+    "task10/1.0.0": {
+      "type": "project",
+      "path": "../task10/task10.csproj",
+      "msbuildProject": "../task10/task10.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "task10 >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Ivan\\.nuget\\packages\\": {}
@@ -31,7 +68,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task10\\task10.csproj": {
+              "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\task10\\task10.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,6 +1,6 @@
 ﻿namespace PluginLib;
 
-public class Class1
+public interface IPluginCommand
 {
-
+    void Execute();
 }
