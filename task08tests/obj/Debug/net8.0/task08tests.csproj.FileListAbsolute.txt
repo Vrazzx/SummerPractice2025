@@ -103,3 +103,13 @@ D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug\net8.0\task08tests.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug\net8.0\task08tests.genruntimeconfig.cache
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\obj\Debug\net8.0\ref\task08tests.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\CommandRunner.deps.json
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\CommandRunner.runtimeconfig.json
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\CommandRunner.exe
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\Castle.Core.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\Moq.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\CommandRunner.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task08tests\bin\Debug\net8.0\CommandRunner.pdb

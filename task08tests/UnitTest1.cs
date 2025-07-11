@@ -1,6 +1,10 @@
 namespace task08tests;
 using FileSystemCommands;
-
+using Xunit;
+using Moq;
+using CommandLib;
+using System.Reflection;
+using CommandRunner;
 public class FileSystemCommandsTests
 {
     [Fact]
@@ -86,3 +90,168 @@ public class FileSystemCommandsTests
         Assert.Equal($"Directory '{nonExistentDir}' not found.", ex.Message);
     }
 }
+
+    public class CommandRunnerTests : IDisposable
+    {
+        private readonly StringWriter _stringWriter;
+        private readonly StringReader _stringReader;
+        private readonly string _testDllPath;
+        private readonly string _testDirPath;
+        private readonly string _testExtension;
+
+        public CommandRunnerTests()
+        {
+            
+            _stringWriter = new StringWriter();
+            _stringReader = new StringReader("");
+            Console.SetOut(_stringWriter);
+            Console.SetIn(_stringReader);
+
+            
+            _testDllPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileSystemCommands.dll");
+            _testDirPath = Path.GetTempPath();
+            _testExtension = "*.txt";
+        }
+
+        public void Dispose()
+        {
+            _stringWriter.Dispose();
+            _stringReader.Dispose();
+            
+            
+            var standardOutput = new StreamWriter(Console.OpenStandardOutput());
+            Console.SetOut(standardOutput);
+            
+            var standardInput = new StreamReader(Console.OpenStandardInput());
+            Console.SetIn(standardInput);
+        }
+
+        [Fact]
+        public void Main_WithNoArgs_StartsCommandRunnerApp()
+        {
+            
+            var args = Array.Empty<string>();
+            var expectedOutput = "Запущено консольное приложение";
+
+            
+            Program.Main(args);
+            var output = _stringWriter.ToString();
+
+            
+            Assert.Contains(expectedOutput, output);
+        }
+
+    
+
+
+        [Fact]
+        public void CommandRunnerApp_WithInvalidChoice_DisplaysErrorMessage()
+        {
+            
+            SetConsoleInput("3"); 
+
+            
+            Program.CommandRunnerApp();
+            var output = _stringWriter.ToString();
+
+            
+            Assert.Contains("Инвалид чойс", output);
+        }
+
+        [Fact]
+        public void CommandRunnerApp_WithMissingDll_DisplaysErrorMessage()
+        {
+            
+            var tempPath = Path.GetTempFileName();
+            File.Delete(tempPath); 
+            SetConsoleInput("1\n" + _testDirPath);
+
+            try
+            {
+                
+                if (File.Exists(_testDllPath))
+                {
+                    File.Move(_testDllPath, _testDllPath + ".bak");
+                }
+
+                
+                Program.CommandRunnerApp();
+                var output = _stringWriter.ToString();
+
+                
+                Assert.Contains($"Файл {_testDllPath} не найден.", output);
+            }
+            finally
+            {
+                
+                if (File.Exists(_testDllPath + ".bak"))
+                {
+                    File.Move(_testDllPath + ".bak", _testDllPath);
+                }
+            }
+        }
+
+        [Fact]
+        public void CommandRunnerApp_WithChoice1_CreatesDirectorySizeCommand()
+        {
+            
+            SetConsoleInput("1\n" + _testDirPath);
+
+            
+            Program.CommandRunnerApp();
+            var output = _stringWriter.ToString();
+
+            
+            Assert.Contains("Введите путь к директории:", output);
+           
+        }
+
+        [Fact]
+        public void CommandRunnerApp_WithChoice2_CreatesFindFilesCommand()
+        {
+         
+            SetConsoleInput("2\n" + _testDirPath + "\n" + _testExtension);
+
+          
+            Program.CommandRunnerApp();
+            var output = _stringWriter.ToString();
+
+            
+            Assert.Contains("Введите путь к директории:", output);
+            Assert.Contains("Введите искомое расширение:", output);
+            
+        }
+
+        [Fact]
+        public void CommandRunnerApp_WithInvalidDirectoryPath_DisplaysErrorMessage()
+        {
+          
+            var invalidPath = "Z:\\nonexistent\\path\\";
+            SetConsoleInput("1\n" + invalidPath);
+
+            
+            Program.CommandRunnerApp();
+            var output = _stringWriter.ToString();
+
+            
+            Assert.Contains("Ошибка:", output);
+        }
+
+        private void SetConsoleInput(string input)
+        {
+            _stringReader.Dispose();
+            Console.SetIn(new StringReader(input));
+        }
+    }
+
+    
+    public class TestCommand : ICommand
+    {
+        public void Execute()
+        {
+            Console.WriteLine("TestCommand executed");
+        }
+    }
+
+
+
