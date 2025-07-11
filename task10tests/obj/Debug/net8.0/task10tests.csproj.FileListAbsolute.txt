@@ -103,3 +103,14 @@ D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\obj\Debug
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\obj\Debug\net8.0\task10tests.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\obj\Debug\net8.0\task10tests.genruntimeconfig.cache
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\obj\Debug\net8.0\ref\task10tests.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\Castle.Core.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\Moq.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\DependencyGraph.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\PluginAttribute.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\DependencyGraph.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\PluginAttribute.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\FirstPlugin.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\FirstPlugin.pdb

@@ -1,169 +1,102 @@
-﻿using PluginLib;
-using System.Reflection;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using PluginLib;
+
 
 namespace task10;
-
-[AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-public class PluginLoadAttribute : Attribute
-{
-    public string Name { get; }
-    public string[] Dependencies { get; }
-
-    public PluginLoadAttribute(string name, params string[] dependencies)
-    {
-        Name = name;
-        Dependencies = dependencies ?? Array.Empty<string>();
-    }
-}
 public class PluginLoader
 {
-    private readonly Dictionary<string, IPluginCommand> _plugins = new();
-    private readonly List<string> _loadedPluginNames = new();
+    private readonly string _pluginsDirectory;
+    private readonly List<Assembly> _loadedAssemblies = new List<Assembly>();
+    private readonly Dictionary<Type, IPlugin> _plugins = new Dictionary<Type, IPlugin>();
 
-    public void LoadPluginsFromDirectory(string directoryPath)
+    public PluginLoader(string pluginsDirectory)
     {
-        if (!Directory.Exists(directoryPath))
-        {
-            throw new DirectoryNotFoundException($"Directory not found: {directoryPath}");
-        }
+        _pluginsDirectory = pluginsDirectory;
+    }
 
-        var dllFiles = Directory.GetFiles(directoryPath, "*.dll");
-        var assemblies = new List<Assembly>();
+    public void LoadPlugins()
+    {
+        // Загрузка всех DLL из указанной директории
+        var pluginFiles = Directory.GetFiles(_pluginsDirectory, "*.dll");
 
-        // Загрузка всех сборок
-        foreach (var dllFile in dllFiles)
+        foreach (var file in pluginFiles)
         {
             try
             {
-                var assembly = Assembly.LoadFrom(dllFile);
-                assemblies.Add(assembly);
+                var assembly = Assembly.LoadFrom(file);
+                _loadedAssemblies.Add(assembly);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Failed to load assembly {dllFile}: {ex.Message}");
+                Console.WriteLine($"Failed to load assembly {file}: {ex.Message}");
             }
         }
 
-        // Сбор информации о всех плагинах
-        var pluginTypes = new List<(Type Type, PluginLoadAttribute Attr)>();
-        foreach (var assembly in assemblies)
+        // Находим все типы с атрибутом PluginLoad
+        var pluginTypes = new List<Type>();
+        foreach (var assembly in _loadedAssemblies)
         {
             try
             {
-                foreach (var type in assembly.GetTypes())
-                {
-                    var attr = type.GetCustomAttribute<PluginLoadAttribute>();
-                    if (attr != null && typeof(IPluginCommand).IsAssignableFrom(type))
-                    {
-                        pluginTypes.Add((type, attr));
-                    }
-                }
+                var types = assembly.GetTypes()
+                    .Where(t => t.GetCustomAttribute<PluginLoadAttribute>() != null &&
+                                typeof(IPlugin).IsAssignableFrom(t));
+                pluginTypes.AddRange(types);
             }
             catch (ReflectionTypeLoadException ex)
             {
-                Console.WriteLine($"Failed to get types from assembly {assembly.FullName}: {ex.Message}");
+                Console.WriteLine($"Failed to load types from {assembly.FullName}: {ex.Message}");
             }
         }
 
-        // Сортировка плагинов с учетом зависимостей (топологическая сортировка)
-        var sortedPlugins = TopologicalSort(pluginTypes);
+        // Создаем граф зависимостей
+        var graph = new DependencyGraph<Type>();
+        foreach (var type in pluginTypes)
+        {
+            var attr = type.GetCustomAttribute<PluginLoadAttribute>();
+            graph.AddNode(type);
 
-        // Создание экземпляров плагинов
-        foreach (var (type, attr) in sortedPlugins)
+            foreach (var dependency in attr.Dependencies)
+            {
+                graph.AddEdge(dependency, type);
+            }
+        }
+
+        // Получаем порядок загрузки с учетом зависимостей
+        var loadOrder = graph.TopologicalSort();
+
+        // Создаем экземпляры плагинов в правильном порядке
+        foreach (var type in loadOrder)
         {
             try
             {
-                if (_plugins.ContainsKey(attr.Name))
-                {
-                    Console.WriteLine($"Plugin {attr.Name} is already loaded. Skipping.");
-                    continue;
-                }
-
-                var plugin = (IPluginCommand)Activator.CreateInstance(type);
-                _plugins.Add(attr.Name, plugin);
-                _loadedPluginNames.Add(attr.Name);
-                Console.WriteLine($"Loaded plugin: {attr.Name}");
+                var plugin = (IPlugin)Activator.CreateInstance(type);
+                _plugins.Add(type, plugin);
+                Console.WriteLine($"Loaded plugin: {type.Name}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Failed to create instance of plugin {attr.Name}: {ex.Message}");
+                Console.WriteLine($"Failed to create instance of {type.Name}: {ex.Message}");
             }
         }
     }
 
     public void ExecuteAll()
     {
-        foreach (var pluginName in _loadedPluginNames)
+        foreach (var plugin in _plugins.Values)
         {
-            if (_plugins.TryGetValue(pluginName, out var plugin))
+            try
             {
-                try
-                {
-                    Console.WriteLine($"Executing plugin: {pluginName}");
-                    plugin.Execute();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error executing plugin {pluginName}: {ex.Message}");
-                }
+                plugin.Execute();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error executing plugin {plugin.GetType().Name}: {ex.Message}");
             }
         }
-    }
-
-    private List<(Type Type, PluginLoadAttribute Attr)> TopologicalSort(
-        List<(Type Type, PluginLoadAttribute Attr)> plugins)
-    {
-        var result = new List<(Type, PluginLoadAttribute)>();
-        var visited = new HashSet<string>();
-        var tempMark = new HashSet<string>();
-
-        var pluginDict = plugins.ToDictionary(x => x.Attr.Name, x => x);
-
-        foreach (var plugin in plugins)
-        {
-            if (!visited.Contains(plugin.Attr.Name))
-            {
-                Visit(plugin.Attr.Name, pluginDict, visited, tempMark, result);
-            }
-        }
-
-        return result;
-    }
-    
-        private void Visit(
-        string pluginName,
-        Dictionary<string, (Type Type, PluginLoadAttribute Attr)> pluginDict,
-        HashSet<string> visited,
-        HashSet<string> tempMark,
-        List<(Type, PluginLoadAttribute)> result)
-    {
-        if (tempMark.Contains(pluginName))
-        {
-            throw new InvalidOperationException($"Circular dependency detected involving plugin {pluginName}");
-        }
-
-        if (visited.Contains(pluginName))
-        {
-            return;
-        }
-
-        if (!pluginDict.TryGetValue(pluginName, out var plugin))
-        {
-            throw new KeyNotFoundException($"Plugin {pluginName} not found in plugin dictionary");
-        }
-
-        tempMark.Add(pluginName);
-
-        foreach (var dependency in plugin.Attr.Dependencies)
-        {
-            Visit(dependency, pluginDict, visited, tempMark, result);
-        }
-
-        tempMark.Remove(pluginName);
-        visited.Add(pluginName);
-        result.Add((plugin.Type, plugin.Attr));
     }
 }

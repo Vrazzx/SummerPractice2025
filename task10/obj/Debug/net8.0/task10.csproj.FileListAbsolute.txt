@@ -14,3 +14,7 @@ D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10\obj\Debug\net8
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10\obj\Debug\net8.0\refint\task10.dll
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10\obj\Debug\net8.0\task10.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10\obj\Debug\net8.0\ref\task10.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10\bin\Debug\net8.0\DependencyGraph.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10\bin\Debug\net8.0\PluginAttribute.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10\bin\Debug\net8.0\PluginAttribute.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10\bin\Debug\net8.0\DependencyGraph.pdb

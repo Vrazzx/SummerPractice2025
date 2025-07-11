@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PluginLib\PluginLib.csproj" />
+    <ProjectReference Include="..\PluginAttribute\PluginAttribute.csproj" />
+    <ProjectReference Include="..\DependencyGraph\DependencyGraph.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

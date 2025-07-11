@@ -14,6 +14,22 @@
           "ConsoleApp.dll": {}
         }
       },
+      "DependencyGraph/1.0.0": {
+        "runtime": {
+          "DependencyGraph.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PluginAttribute/1.0.0": {
+        "runtime": {
+          "PluginAttribute.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "PluginLib/1.0.0": {
         "runtime": {
           "PluginLib.dll": {
@@ -24,6 +40,8 @@
       },
       "task10/1.0.0": {
         "dependencies": {
+          "DependencyGraph": "1.0.0",
+          "PluginAttribute": "1.0.0",
           "PluginLib": "1.0.0"
         },
         "runtime": {
@@ -37,6 +55,16 @@
   },
   "libraries": {
     "ConsoleApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DependencyGraph/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PluginAttribute/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
