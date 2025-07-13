@@ -24,6 +24,8 @@
   <ItemGroup>
     <ProjectReference Include="..\task10\task10.csproj" />
     <ProjectReference Include="..\Plugins\FirstPlugin\FirstPlugin.csproj" />
+    <ProjectReference Include="..\Plugins\SecondPlugin\SecondPlugin.csproj" />
+    <ProjectReference Include="..\Plugins\CircularPlugin\CircularPlugin.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,6 +7,7 @@ using PluginLib;
 
 
 namespace task10;
+
 public class PluginLoader
 {
     private readonly string _pluginsDirectory;
@@ -21,8 +22,7 @@ public class PluginLoader
     public void LoadPlugins()
     {
         // Загрузка всех DLL из указанной директории
-        var pluginFiles = Directory.GetFiles(_pluginsDirectory, "*.dll");
-
+        var pluginFiles = Directory.GetFiles(_pluginsDirectory, "*.dll", SearchOption.AllDirectories);
         foreach (var file in pluginFiles)
         {
             try
@@ -99,4 +99,6 @@ public class PluginLoader
             }
         }
     }
+
 }
+    

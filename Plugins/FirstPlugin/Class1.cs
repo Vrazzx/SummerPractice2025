@@ -1,20 +1,23 @@
 ﻿using PluginLib;
+
 namespace FirstPlugin;
+
+using PluginLib;
 
 [PluginLoad("FirstPlugin")]
 public class FirstPlugin : IPlugin
 {
     public void Execute()
     {
-        Console.WriteLine("FirstPlugin executed first!");
+        Console.WriteLine("FirstPlugin is running!");
     }
 }
 
-[PluginLoad("SecondPlugin", Dependencies = new[] { typeof(FirstPlugin) })]
-public class SecondPlugin : IPlugin
+[PluginLoad("SubFirstPlugin")]
+public class SubFirstPlugin : IPlugin
 {
     public void Execute()
     {
-        Console.WriteLine("SecondPlugin executed!");
+        Console.WriteLine("SubFirstPlugin is running!");
     }
 }

@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task10", "task10\task10.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task10tests", "task10tests\task10tests.csproj", "{6E8AEA55-C5AA-4815-BCB4-1DF080E67666}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{5C14840C-2F41-429C-9B84-BE888CF14C14}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginLib", "PluginLib\PluginLib.csproj", "{CA3704AE-CAA6-4EA2-BCFF-DBC0FF244574}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginAttribute", "PluginAttribute\PluginAttribute.csproj", "{CD33198B-DF2E-4DEE-8AC2-5A1981FCF132}"
@@ -20,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstPlugin", "Plugins\FirstPlugin\FirstPlugin.csproj", "{5782346F-EAB0-44CC-A0F2-F19783AE296D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondPlugin", "Plugins\SecondPlugin\SecondPlugin.csproj", "{B54C8E4C-D8BB-4A37-92E5-13DD4E737FE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularPlugin", "CircularPlugin\CircularPlugin.csproj", "{C8BEFAFB-4E6C-4300-8F98-26735CC317C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +38,6 @@ Global
 		{6E8AEA55-C5AA-4815-BCB4-1DF080E67666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E8AEA55-C5AA-4815-BCB4-1DF080E67666}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E8AEA55-C5AA-4815-BCB4-1DF080E67666}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C14840C-2F41-429C-9B84-BE888CF14C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C14840C-2F41-429C-9B84-BE888CF14C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C14840C-2F41-429C-9B84-BE888CF14C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C14840C-2F41-429C-9B84-BE888CF14C14}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA3704AE-CAA6-4EA2-BCFF-DBC0FF244574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA3704AE-CAA6-4EA2-BCFF-DBC0FF244574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA3704AE-CAA6-4EA2-BCFF-DBC0FF244574}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,6 +58,10 @@ Global
 		{B54C8E4C-D8BB-4A37-92E5-13DD4E737FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B54C8E4C-D8BB-4A37-92E5-13DD4E737FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B54C8E4C-D8BB-4A37-92E5-13DD4E737FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8BEFAFB-4E6C-4300-8F98-26735CC317C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8BEFAFB-4E6C-4300-8F98-26735CC317C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8BEFAFB-4E6C-4300-8F98-26735CC317C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8BEFAFB-4E6C-4300-8F98-26735CC317C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5782346F-EAB0-44CC-A0F2-F19783AE296D} = {D8DFED00-9A8D-4850-9AB9-90577A06848C}

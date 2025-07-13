@@ -11,6 +11,7 @@
           "FirstPlugin": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "Moq": "4.20.72",
+          "SecondPlugin": "1.0.0",
           "coverlet.collector": "6.0.0",
           "task10": "1.0.0",
           "xunit": "2.5.3",
@@ -1103,6 +1104,19 @@
           }
         }
       },
+      "SecondPlugin/1.0.0": {
+        "dependencies": {
+          "FirstPlugin": "1.0.0",
+          "PluginAttribute": "1.0.0",
+          "PluginLib": "1.0.0"
+        },
+        "runtime": {
+          "SecondPlugin.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "task10/1.0.0": {
         "dependencies": {
           "DependencyGraph": "1.0.0",
@@ -1784,6 +1798,11 @@
       "sha512": ""
     },
     "PluginLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SecondPlugin/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -114,3 +114,5 @@ D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\PluginAttribute.pdb
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\FirstPlugin.dll
 D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\FirstPlugin.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\SecondPlugin.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\task10tests\bin\Debug\net8.0\SecondPlugin.pdb
