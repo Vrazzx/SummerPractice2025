@@ -10,7 +10,7 @@ namespace task10.Tests
 {
     public class PluginLoaderTests
     {
-        private readonly string _testPluginsPath = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\Plugins");
+        private readonly string _testPluginsPath = Path.Combine(Directory.GetCurrentDirectory(), "../../../../Plugins");
 
         [Fact]
         public void LoadPlugins_ShouldLoadAllPluginsFromDirectory()
@@ -92,7 +92,7 @@ namespace task10.Tests
         public void LoadPlugins_ShouldThrowOnCircularDependencies()
         {
 
-            var circularPluginsPath = Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\..\CircularPlugin");
+            var circularPluginsPath = Path.Combine(Directory.GetCurrentDirectory(), "../../../../CircularPlugin");
 
             var pluginLoader = new PluginLoader(circularPluginsPath);
 
