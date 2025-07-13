@@ -100,14 +100,14 @@ namespace task10.Tests
             var ex = Assert.Throws<InvalidOperationException>(() => pluginLoader.LoadPlugins());
             Assert.Contains("Cyclic dependency detected", ex.Message);
         }
-        
+
         [Fact]
         public void LoadPlugins_ShouldHandleEmptyDirectory()
         {
             // Arrange
             var emptyDir = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
             Directory.CreateDirectory(emptyDir);
-            
+
             var pluginLoader = new PluginLoader(emptyDir);
             var consoleOutput = new StringWriter();
             Console.SetOut(consoleOutput);
@@ -118,7 +118,7 @@ namespace task10.Tests
             // Assert
             var output = consoleOutput.ToString();
             Assert.DoesNotContain("Failed", output); // Не должно быть ошибок
-            
+
             var pluginsField = typeof(PluginLoader).GetField("_plugins", BindingFlags.NonPublic | BindingFlags.Instance);
             var plugins = (Dictionary<Type, IPlugin>)pluginsField.GetValue(pluginLoader);
             Assert.Empty(plugins);

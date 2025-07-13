@@ -20,7 +20,7 @@ public class DependencyGraph<T>
             AddNode(from);
         if (!_adjacencyList.ContainsKey(to))
             AddNode(to);
-            
+
         _adjacencyList[from].Add(to);
     }
 
@@ -51,7 +51,7 @@ public class DependencyGraph<T>
             return;
 
         tempMark.Add(node);
-        
+
         foreach (var neighbor in _adjacencyList[node])
         {
             Visit(neighbor, visited, tempMark, result);
