@@ -43,7 +43,7 @@ public class Student
 }
 public class JsonDateTimeConverter : JsonConverter<DateTime>
 {
-    private const string Format = "yyyy-mm-dd";
+    private const string Format = "yyyy-MM-dd";
 
     public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
@@ -53,7 +53,7 @@ public class JsonDateTimeConverter : JsonConverter<DateTime>
         }
         catch (FormatException ex)
         {
-            throw new JsonException("Неверный формат даты. Ожидается: yyyy-mm-dd", ex);
+            throw new JsonException("Неверный формат даты. Ожидается: yyyy-MM-dd", ex);
         }
     }
 
@@ -81,29 +81,29 @@ public static class JsonStudentService
         try
         {
             var student = JsonSerializer.Deserialize<Student>(json, _options);
-            
-           
+
+
             if (string.IsNullOrWhiteSpace(student.FirstName))
                 throw new JsonException("FirstName не может быть пусто");
-                
+
             if (string.IsNullOrWhiteSpace(student.LastName))
                 throw new JsonException("LastName не может быть пусто");
-                
+
             if (student.BirthDate > DateTime.Now)
                 throw new JsonException("BirthDate не может быть больше текущей даты");
-                
+
             if (student.Grades != null)
             {
                 foreach (var grade in student.Grades)
                 {
                     if (string.IsNullOrWhiteSpace(grade.Name))
                         throw new JsonException("Subject не может быть пусто");
-                        
+
                     if (grade.Grade < 1 || grade.Grade > 5)
                         throw new JsonException("Grade должно быть между 1 и 5");
                 }
             }
-            
+
             return student;
         }
         catch (JsonException ex)
