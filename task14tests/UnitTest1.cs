@@ -3,9 +3,6 @@ namespace task14tests;
 using Xunit;
 public class DefiniteIntegralTests
 {
-
-
-
     [Fact]
     public void LinearFunction_SymmetricInterval_ReturnsZero()
     {
@@ -21,16 +18,10 @@ public class DefiniteIntegralTests
         Assert.Equal(0, result, 1e-4);
     }
     [Fact]
-    public void LinearFunction_ZeroToFive_ReturnsTen()
+    public void LinearFunction_ZeroToFive_ReturnsCorrectValue()
     {
         var X = (double x) => x;
         var result = DefiniteIntegral.Solve(0, 5, X, 1e-6, 8);
         Assert.Equal(12.5, result, 1e-5);
     }
 }
-
-
-
-
-
-

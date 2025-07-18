@@ -12,7 +12,7 @@ public class DefiniteIntegral
         double totalLength = b - a;
         double segmentLength = totalLength / threadsNumber;
         double result = 0.0;
-
+        object lockObj = new object();
 
         using (var barrier = new Barrier(threadsNumber + 1))
         {
@@ -24,13 +24,15 @@ public class DefiniteIntegral
                 Thread thread = new Thread(() =>
                 {
                     double partialResult = CalculatePartialIntegral(start, end, function, step);
-                    Interlocked.Exchange(ref result, result + partialResult);
+                    lock (lockObj)
+                    {
+                        result += partialResult;
+                    }
                     barrier.SignalAndWait();
                 });
 
                 thread.Start();
             }
-
 
             barrier.SignalAndWait();
         }
