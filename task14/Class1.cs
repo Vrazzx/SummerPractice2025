@@ -3,40 +3,47 @@ using System.Threading;
 
 public class DefiniteIntegral
 {
-    public static double Solve(double a, double b, Func<double, double> function, double step, int threadsNumber)
+public static double Solve(double a, double b, Func<double, double> function, double step, int threadsNumber)
+{
+    if (threadsNumber <= 0) throw new ArgumentException("Число потоков должно быть положительным");
+    if (step <= 0) throw new ArgumentException("Шаг должен быть положительным");
+    if (b < a) throw new ArgumentException("b должно быть больше a");
+
+    // Оптимизация для однопоточного случая
+    if (threadsNumber == 1)
     {
-        if (threadsNumber <= 0) throw new ArgumentException("Число потоков должно быть положительным");
-        if (step <= 0) throw new ArgumentException("Шаг должен быть положительным");
-        if (b < a) throw new ArgumentException("b Должно быть больше a");
+        return CalculatePartialIntegral(a, b, function, step);
+    }
 
-        double totalLength = b - a;
-        double segmentLength = totalLength / threadsNumber;
-        double result = 0.0;
+    double totalLength = b - a;
+    double segmentLength = totalLength / threadsNumber;
+    double result = 0.0;
+    var threads = new Thread[threadsNumber];
+    var partialResults = new double[threadsNumber];
 
-
-        using (var barrier = new Barrier(threadsNumber + 1))
+    using (var countdown = new CountdownEvent(threadsNumber))
+    {
+        for (int i = 0; i < threadsNumber; i++)
         {
-            for (int i = 0; i < threadsNumber; i++)
+            int threadIndex = i; // Захватываем локальную переменную для потока
+            double start = a + threadIndex * segmentLength;
+            double end = (threadIndex == threadsNumber - 1) ? b : start + segmentLength;
+
+            threads[threadIndex] = new Thread(() =>
             {
-                double start = a + i * segmentLength;
-                double end = (i == threadsNumber - 1) ? b : start + segmentLength;
+                partialResults[threadIndex] = CalculatePartialIntegral(start, end, function, step);
+                countdown.Signal();
+            });
 
-                Thread thread = new Thread(() =>
-                {
-                    double partialResult = CalculatePartialIntegral(start, end, function, step);
-                    Interlocked.Exchange(ref result, result + partialResult);
-                    barrier.SignalAndWait();
-                });
-
-                thread.Start();
-            }
-
-
-            barrier.SignalAndWait();
+            threads[threadIndex].Start();
         }
 
-        return result;
+        countdown.Wait(); // Ждем завершения всех потоков
+        result = partialResults.Sum();
     }
+
+    return result;
+}
 
     private static double CalculatePartialIntegral(double a, double b, Func<double, double> function, double step)
     {
@@ -55,5 +62,12 @@ public class DefiniteIntegral
         }
 
         return integral;
+    }
+    public static double SingleThreadSolve(double a, double b, Func<double, double> function, double step)
+    {
+        if (step <= 0) throw new ArgumentException("Шаг должен быть положительным");
+        if (b < a) throw new ArgumentException("b Должно быть больше a");
+        
+        return CalculatePartialIntegral(a, b, function, step);
     }
 }
