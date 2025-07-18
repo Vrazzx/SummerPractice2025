@@ -1,0 +1,257 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\SecondPlugin\\SecondPlugin.csproj": {}
+  },
+  "projects": {
+    "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginAttribute\\PluginAttribute.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginAttribute\\PluginAttribute.csproj",
+        "projectName": "PluginAttribute",
+        "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginAttribute\\PluginAttribute.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginAttribute\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginLib\\PluginLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginLib\\PluginLib.csproj",
+        "projectName": "PluginLib",
+        "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginLib\\PluginLib.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\FirstPlugin\\FirstPlugin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\FirstPlugin\\FirstPlugin.csproj",
+        "projectName": "FirstPlugin",
+        "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\FirstPlugin\\FirstPlugin.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\FirstPlugin\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginAttribute\\PluginAttribute.csproj": {
+                "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginAttribute\\PluginAttribute.csproj"
+              },
+              "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginLib\\PluginLib.csproj": {
+                "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginLib\\PluginLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\SecondPlugin\\SecondPlugin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\SecondPlugin\\SecondPlugin.csproj",
+        "projectName": "SecondPlugin",
+        "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\SecondPlugin\\SecondPlugin.csproj",
+        "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\SecondPlugin\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginAttribute\\PluginAttribute.csproj": {
+                "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginAttribute\\PluginAttribute.csproj"
+              },
+              "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginLib\\PluginLib.csproj": {
+                "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\PluginLib\\PluginLib.csproj"
+              },
+              "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\FirstPlugin\\FirstPlugin.csproj": {
+                "projectPath": "D:\\Users\\Ivan\\Desktop\\Code\\2025Practice\\SummerPractice2025\\Plugins\\FirstPlugin\\FirstPlugin.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.409/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

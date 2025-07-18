@@ -1,0 +1,12 @@
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\bin\Debug\net8.0\PluginAttribute.deps.json
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\bin\Debug\net8.0\PluginAttribute.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\bin\Debug\net8.0\PluginAttribute.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\PluginAttribute.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\PluginAttribute.AssemblyInfoInputs.cache
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\PluginAttribute.AssemblyInfo.cs
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\PluginAttribute.csproj.CoreCompileInputs.cache
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\PluginAttribute.sourcelink.json
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\PluginAttribute.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\refint\PluginAttribute.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\PluginAttribute.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\PluginAttribute\obj\Debug\net8.0\ref\PluginAttribute.dll
