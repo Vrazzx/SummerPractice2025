@@ -3,7 +3,7 @@ using System.Diagnostics;
 using ScottPlot;
 public class Program
 {
-    
+
     public static double a = -100, b = 100;
     public static Func<double, double> sinFunc = Math.Sin;
     public static void Main(string[] args)
@@ -34,8 +34,8 @@ public class Program
     public static void SingleOptimalThread(double step)
     {
         var stopwatch = new Stopwatch();
-        
-        
+
+
         stopwatch.Restart();
         for (int i = 0; i < 10; i++)
         {

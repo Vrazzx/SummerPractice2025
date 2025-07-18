@@ -28,9 +28,3 @@ public class DefiniteIntegralTests
         Assert.Equal(12.5, result, 1e-5);
     }
 }
-
-
-
-
-
-
