@@ -3,32 +3,31 @@ using System.Threading;
 
 public class DefiniteIntegral
 {
-    public static double Solve(double a, double b, Func<double, double> function, double step, int threadsNumber)
+public static double Solve(double a, double b, Func<double, double> function, double step, int threadsNumber)
+{
+    if (threadsNumber <= 0) throw new ArgumentException("Число потоков должно быть положительным");
+    if (step <= 0) throw new ArgumentException("Шаг должен быть положительным");
+    if (b < a) throw new ArgumentException("b Должно быть больше a");
+
+    double totalLength = b - a;
+    double segmentLength = totalLength / threadsNumber;
+    double result = 0.0;
+
+    
+    Parallel.For(0, threadsNumber, () => 0.0, (i, state, localResult) =>
     {
-        if (threadsNumber <= 0) throw new ArgumentException("Число потоков должно быть положительным");
-        if (step <= 0) throw new ArgumentException("Шаг должен быть положительным");
-        if (b < a) throw new ArgumentException("b Должно быть больше a");
+        double start = a + i * segmentLength;
+        double end = (i == threadsNumber - 1) ? b : start + segmentLength;
+        return localResult + CalculatePartialIntegral(start, end, function, step);
+    },
+    localResult => 
+    {
+        
+        Interlocked.Exchange(ref result, result + localResult);
+    });
 
-
-        int actualThreads = Math.Min(threadsNumber, Environment.ProcessorCount);
-        double totalLength = b - a;
-        double result = 0.0;
-
-
-        Parallel.For(0, actualThreads, new ParallelOptions { MaxDegreeOfParallelism = actualThreads }, i =>
-        {
-
-            double start = a + i * totalLength / actualThreads;
-            double end = a + (i + 1) * totalLength / actualThreads;
-
-            double partialResult = CalculatePartialIntegral(start, end, function, step);
-
-
-            Interlocked.Exchange(ref result, result + partialResult);
-        });
-
-        return result;
-    }
+    return result;
+}
 
 
     private static double CalculatePartialIntegral(double a, double b, Func<double, double> function, double step)

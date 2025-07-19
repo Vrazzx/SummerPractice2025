@@ -16,18 +16,23 @@ public class Program
 
     public static double OptimalStep()
     {
-
         double exactValue = -Math.Cos(b) - (-Math.Cos(a));
-        var errorsAndSteps = new Dictionary<double, double>();
+        var timeAndSteps = new Dictionary<double, double>();
         double[] steps = { 1e-1, 1e-2, 1e-3, 1e-4, 1e-5, 1e-6 };
+
         foreach (double step in steps)
         {
+            var stopwatch = Stopwatch.StartNew();
             double result = DefiniteIntegral.Solve(a, b, sinFunc, step, 1);
-            double error = Math.Abs(result - exactValue);
-            Console.WriteLine($"Step: {step}, Error: {error}");
-            errorsAndSteps[step] = error;
+            stopwatch.Stop();
+
+            double elapsedTime = stopwatch.Elapsed.TotalMilliseconds; 
+            timeAndSteps[step] = elapsedTime;
+            Console.WriteLine($"Step: {step}, Time (ms): {elapsedTime}");
         }
-        var minEntry = errorsAndSteps.OrderBy(kv => kv.Value).FirstOrDefault();
+
+        
+        var minEntry = timeAndSteps.OrderBy(kv => kv.Value).FirstOrDefault();
         return minEntry.Key;
     }
 
