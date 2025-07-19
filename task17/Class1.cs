@@ -9,7 +9,10 @@ public interface ICommand
 {
     void Execute();
 }
-
+public interface ICancellableCommand : ILongRunningCommand
+{
+    void Cancel();
+}
 public interface IExceptionHandler
 {
     void Handle(Exception exception, ICommand command);
@@ -215,3 +218,54 @@ public class SoftStopCommand : ICommand
     }
 }
 
+public class TestCommand : ILongRunningCommand
+{
+    private readonly int _id;
+    private int _counter = 0;
+    private readonly int _requiredExecutions;
+    
+    public TestCommand(int id, int requiredExecutions = 3)
+    {
+        _id = id;
+        _requiredExecutions = requiredExecutions;
+    }
+
+    public bool IsCompleted => _counter >= _requiredExecutions;
+    public int Counter => _counter;
+    public int Id => _id; 
+    
+    public void Execute()
+    {
+        if (IsCompleted) return;
+        
+        _counter++;
+        Console.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] Поток {_id} вызов {_counter}");
+        Thread.Sleep(100); 
+    }
+}
+
+public class CancellableCommand : ILongRunningCommand
+{
+    private readonly int _id;
+    private int _counter = 0;
+    private volatile bool _isCancelled;
+    
+    public CancellableCommand(int id)
+    {
+        _id = id;
+    }
+
+    public bool IsCompleted => _counter >= 5 || _isCancelled;
+    public int Counter => _counter; 
+    
+    public void Cancel() => _isCancelled = true;
+    
+    public void Execute()
+    {
+        if (IsCompleted) return;
+        
+        _counter++;
+        Console.WriteLine($"Отменяемая команда {_id} вызов {_counter}");
+        Thread.Sleep(150);
+    }
+}
