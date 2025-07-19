@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Threading;
 
 public interface ICommand
@@ -14,23 +15,70 @@ public interface IExceptionHandler
     void Handle(Exception exception, ICommand command);
 }
 
+public interface IScheduler
+{
+    bool HasCommand();
+    ICommand Select();
+    void Add(ICommand cmd);
+}
+
+public class RoundRobinScheduler : IScheduler
+{
+    private readonly Queue<ICommand> _commands = new Queue<ICommand>();
+    private readonly object _lock = new object();
+
+    public bool HasCommand()
+    {
+        lock (_lock)
+        {
+            return _commands.Count > 0;
+        }
+    }
+    public int CommandCount 
+    {
+        get { lock (_lock) return _commands.Count; }
+    }
+    public ICommand Select()
+    {
+        lock (_lock)
+        {
+            if (_commands.Count == 0)
+                return null;
+            
+            return _commands.Dequeue();
+        }
+    }
+
+    public void Add(ICommand cmd)
+    {
+        if (cmd == null) throw new ArgumentNullException(nameof(cmd));
+        
+        lock (_lock)
+        {
+            _commands.Enqueue(cmd);
+        }
+    }
+}
+
 public class ServerThread : IDisposable
 {
     private readonly Thread _thread;
     private readonly ConcurrentQueue<ICommand> _commandQueue = new ConcurrentQueue<ICommand>();
     private readonly AutoResetEvent _commandAvailable = new AutoResetEvent(false);
     private readonly IExceptionHandler _exceptionHandler;
+    private readonly IScheduler _scheduler;
     private volatile bool _isRunning;
     private volatile bool _softStopRequested;
 
-    public ServerThread(IExceptionHandler exceptionHandler = null)
+    public ServerThread(IExceptionHandler exceptionHandler = null, IScheduler scheduler = null)
     {
         _exceptionHandler = exceptionHandler;
+        _scheduler = scheduler ?? new RoundRobinScheduler();
         _isRunning = true;
         _thread = new Thread(ProcessCommands) { IsBackground = true };
         _thread.Start();
     }
-
+    public int GetQueueCount() => _commandQueue.Count;
     public void EnqueueCommand(ICommand command)
     {
         if (command == null) throw new ArgumentNullException(nameof(command));
@@ -45,9 +93,21 @@ public class ServerThread : IDisposable
         {
             while (_isRunning)
             {
-                if (_commandQueue.TryDequeue(out var command))
+                
+                if (_scheduler.HasCommand())
                 {
-                    ExecuteCommand(command);
+                    var command = _scheduler.Select();
+                    if (command != null)
+                    {
+                        ExecuteCommand(command);
+                        continue;
+                    }
+                }
+
+                
+                if (_commandQueue.TryDequeue(out var newCommand))
+                {
+                    ExecuteCommand(newCommand);
                 }
                 else if (_softStopRequested)
                 {
@@ -55,13 +115,21 @@ public class ServerThread : IDisposable
                 }
                 else
                 {
-                    _commandAvailable.WaitOne();
+                    
+                    if (!_scheduler.HasCommand())
+                    {
+                        _commandAvailable.WaitOne();
+                    }
+                    else
+                    {
+                        
+                        Thread.Yield();
+                    }
                 }
             }
         }
         finally
         {
-            
             while (_commandQueue.TryDequeue(out _)) { }
         }
     }
@@ -71,6 +139,12 @@ public class ServerThread : IDisposable
         try
         {
             command.Execute();
+            
+            
+            if (command is ILongRunningCommand longRunningCommand && longRunningCommand.IsCompleted == false)
+            {
+                _scheduler.Add(command);
+            }
         }
         catch (Exception ex)
         {
@@ -106,6 +180,11 @@ public class ServerThread : IDisposable
     }
 }
 
+public interface ILongRunningCommand : ICommand
+{
+    bool IsCompleted { get; }
+}
+
 public class HardStopCommand : ICommand
 {
     private readonly ServerThread _serverThread;
@@ -135,3 +214,4 @@ public class SoftStopCommand : ICommand
         _serverThread.RequestSoftStop();
     }
 }
+
