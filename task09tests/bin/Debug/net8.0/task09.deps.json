@@ -1,0 +1,70 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "task09/1.0.0": {
+        "dependencies": {
+          "FileSystemCommands": "1.0.0",
+          "task07": "1.0.0"
+        },
+        "runtime": {
+          "task09.dll": {}
+        }
+      },
+      "CommandLib/1.0.0": {
+        "runtime": {
+          "CommandLib.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "FileSystemCommands/1.0.0": {
+        "dependencies": {
+          "CommandLib": "1.0.0",
+          "task07": "1.0.0"
+        },
+        "runtime": {
+          "FileSystemCommands.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "task07/1.0.0": {
+        "runtime": {
+          "task07.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "task09/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CommandLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileSystemCommands/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "task07/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
