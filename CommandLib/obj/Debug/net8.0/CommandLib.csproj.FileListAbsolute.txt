@@ -1,0 +1,12 @@
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\bin\Debug\net8.0\CommandLib.deps.json
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\bin\Debug\net8.0\CommandLib.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\bin\Debug\net8.0\CommandLib.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\CommandLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\CommandLib.AssemblyInfoInputs.cache
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\CommandLib.AssemblyInfo.cs
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\CommandLib.csproj.CoreCompileInputs.cache
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\CommandLib.sourcelink.json
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\CommandLib.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\refint\CommandLib.dll
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\CommandLib.pdb
+D:\Users\Ivan\Desktop\Code\2025Practice\SummerPractice2025\CommandLib\obj\Debug\net8.0\ref\CommandLib.dll
